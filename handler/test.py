@@ -37,4 +37,4 @@ async def func_name_4(message: Message):
     """
     image = FSInputFile('data/image/1.jpg')
 
-    await message.answer_photo(image, caption='держи фотку')
+    await message.answer_photo(image, caption='это я')
