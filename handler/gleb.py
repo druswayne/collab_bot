@@ -20,7 +20,10 @@ async def func_name_2(message: Message):
     """
     await message.answer(text='Советую тебе фильмы "Forest Gump", "Kill Bill" и серию кинофильмов "Star Wars"')
 
-@dp.message(Command('test'))
+@dp.message(Command('RandomGame'))
 async def func_name_3(message: Message):
-    photo = open('data/image/' + random.choice(os.listdir('image')), 'rb')
-    await message.answer(photo, caption= "Держи")
+    list_image = os.listdir('data/games')
+    url = f'data/games/{random.choice(list_image)}'
+    photo = FSInputFile(url)
+    await message.answer_photo(photo, caption='держи игру')
+

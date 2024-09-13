@@ -35,6 +35,6 @@ async def func_name_4(message: Message):
     """
     обработчик, который реагирует на команду /photo
     """
-    image = FSInputFile('data/image/1.jpg')
+    photo = FSInputFile('data/image/1.jpg')
 
-    await message.answer_photo(image, caption='держи фотку')
+    await message.answer_photo(photo, caption='держи фотку')
