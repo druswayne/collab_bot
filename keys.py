@@ -1,1 +1,1 @@
-TOKEN = 'место для токена'
+TOKEN = '7236476113:AAH6_qLSyfn1EXAYmAA_bx5k1cLT_4khZ6w'
