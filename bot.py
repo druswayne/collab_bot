@@ -1,7 +1,8 @@
-import logging
 import asyncio
-from loader import *
+import logging
 import handler
+from loader import *
+
 
 async def main():
     await dp.start_polling(bot, allowed_updates=dp.resolve_used_update_types())
