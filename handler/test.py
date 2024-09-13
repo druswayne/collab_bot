@@ -1,11 +1,13 @@
 from loader import dp, Bot
 from aiogram import F
 from aiogram.types import Message, FSInputFile, URLInputFile, BufferedInputFile
-from aiogram.filters import Command
+from aiogram.filters import Command, Text
 
 
-@dp.message(F.text == 'Привет')
+@dp.message(Text(startswith='привет'))
 async def func_name_1(message: Message):
+    a = message.text
+    print(a)
     """
     обработчик, который реагирует на текст "Привет"
     """
@@ -14,6 +16,7 @@ async def func_name_1(message: Message):
 
 @dp.message(Command('start'))
 async def func_name_2(message: Message):
+
     """
     обработчик, который реагирует на команду /start
     """
