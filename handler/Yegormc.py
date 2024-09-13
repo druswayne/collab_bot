@@ -33,7 +33,7 @@ async def func_name_2(message: Message):
     """
     обработчик, который реагирует на команду /metro
     """
-    await message.answer(text='Ты нажал команду /metro и иди играй в METRO ROYALE в PUBG MOBILE')
+    await message.answer(text='Ты нажал команду /metro и иди качай пабг https://play.google.com/store/apps/details?id=com.tencent.ig&hl=ru и иди играй в METRO ROYALE в PUBG MOBILE')
 
 
 @dp.message(F.text == 'Что приготовить?')
