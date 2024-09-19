@@ -1,4 +1,4 @@
-from panda3d_tools import text_stats
+
 
 from loader import dp, Bot
 from aiogram import F
