@@ -1,0 +1,25 @@
+<html>
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css') }}">
+    <title>Medicines</title>
+</head>
+
+<body>
+{%for med in data%}
+<table>
+    <tr>
+        {{med[0]}},
+        {{med[1]}},
+        {{med[2]}},
+        {{med[3]}}
+    </tr>
+</table>
+{%endfor%}
+
+<form action="/find/">
+    <input type="submit" value="Искать лекарства">
+</form>
+
+</body>
+
+</html>
