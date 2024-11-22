@@ -16,8 +16,16 @@
 </table>
 {%endfor%}
 
+{%if YourName != None%}
+Hello, {{name}}
+{%endif%}
+
 <form action="/find/">
     <input type="submit" value="Искать лекарства">
+</form>
+
+<form id="form2" action="/regestration/">
+    <input type="submit" value="Зарегестрироваться">
 </form>
 
 </body>
