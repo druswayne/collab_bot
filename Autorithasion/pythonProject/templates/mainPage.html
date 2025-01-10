@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <title>Welcome!</title>
+    <style>
+        .success{color:green;}
+        .danger{color:red;}
+    </style>
+</head>
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<p class="{{ category }}">{{ message }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<h1>Добро пожаловать</h1>
+<h2>Выберите действие:</h2>
+<form action="/login/">
+    <input type="submit" value="Логин">
+</form>
+<form id="form2" action="/register/">
+    <input type="submit" value="Регистрация">
+</form>
+</body>
+</html>
