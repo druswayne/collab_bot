@@ -37,6 +37,9 @@ def save_register():
     patronymic1 = request.form['patronymic']
     gender1 = request.form['gender']
     email1 = request.form['email']
+
+
+
     username1 = request.form['username']
     password1 = request.form['password']
     cursor.execute(
