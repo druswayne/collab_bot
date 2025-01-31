@@ -81,8 +81,8 @@ def savepost():
     title = request.form['title']
     image = request.files.get('image')
     description = request.form['description']
-    image.save(f'static/uploads/{image.filename}')
-    file_name = f'static/uploads/{image.filename}'
+    image.save(f'home/GoGn/first sait/Autorithasion/pythonProject/static/uploads/{image.filename}')
+    file_name = f'home/GoGn/first sait/Autorithasion/pythonProject/static/uploads/{image.filename}'
     cursor.execute(
         "INSERT INTO PostTable (title, file_name, description) VALUES (?, ?, ?)",
         (title, file_name, description))
@@ -102,5 +102,3 @@ def logout():
     session.clear()
     flash('Вы вышли из профиля', 'danger')
     return redirect(url_for('main_page'))
-
-app.run(debug=True, port=1234)
