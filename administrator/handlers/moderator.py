@@ -1,16 +1,12 @@
 from aiogram.types import Message
 from loader import (router, user_violations, MAX_VIOLATIONS, MUTE_DURATION, FORBIDDEN_WORDS)
+from loader import router, cursor, con, bot
 from datetime import datetime, timedelta
 
 async def record_violation(user_id):
     if user_id not in user_violations:
-        user_violations[user_id] = {
-            'count': 0,
-            'last_violation': None
-        }
-    violations = user_violations[user_id]
-    violations['count'] += 1
-    violations['last_violation'] = datetime.now()
+        cursor.execute('INSERT INTO viol (user_id, count, last_violation) VALUES (?,?, ?)', [user_id, 0, None])
+        con.commit()
 
 async def check_user_mute(user_id):
     if user_id in user_violations:
@@ -50,3 +46,9 @@ async def handle_message(message: Message):
                 f"@{message.from_user.username}, сообщение удалено: "
                 f"содержит запрещённое слово. Нарушение #{user_violations[user_id]['count']}")
             return
+
+#ДОДЕЛАТЬ
+#cursor.execute('SELECT count FROM viol where id=(?)', [user_id])
+#count = cursor.fetchall()
+#cursor.execute('SELECT last_violation FROM viol where id=(?)', [user_id])
+#last_violation = cursor.fetchall()
